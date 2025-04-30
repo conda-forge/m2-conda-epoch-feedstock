@@ -71,14 +71,14 @@ Current release info
 Installing m2-conda-epoch
 =========================
 
-Installing `m2-conda-epoch` from the `conda-forge/label/msys2-experimental` channel can be achieved by adding `conda-forge/label/msys2-experimental` to your channels with:
+Installing `m2-conda-epoch` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
 
 ```
-conda config --add channels conda-forge/label/msys2-experimental
+conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge/label/msys2-experimental` channel has been enabled, `m2-conda-epoch` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `m2-conda-epoch` can be installed with `conda`:
 
 ```
 conda install m2-conda-epoch
@@ -93,26 +93,26 @@ mamba install m2-conda-epoch
 It is possible to list all of the versions of `m2-conda-epoch` available on your platform with `conda`:
 
 ```
-conda search m2-conda-epoch --channel conda-forge/label/msys2-experimental
+conda search m2-conda-epoch --channel conda-forge
 ```
 
 or with `mamba`:
 
 ```
-mamba search m2-conda-epoch --channel conda-forge/label/msys2-experimental
+mamba search m2-conda-epoch --channel conda-forge
 ```
 
 Alternatively, `mamba repoquery` may provide more information:
 
 ```
 # Search all versions available on your platform:
-mamba repoquery search m2-conda-epoch --channel conda-forge/label/msys2-experimental
+mamba repoquery search m2-conda-epoch --channel conda-forge
 
 # List packages depending on `m2-conda-epoch`:
-mamba repoquery whoneeds m2-conda-epoch --channel conda-forge/label/msys2-experimental
+mamba repoquery whoneeds m2-conda-epoch --channel conda-forge
 
 # List dependencies of `m2-conda-epoch`:
-mamba repoquery depends m2-conda-epoch --channel conda-forge/label/msys2-experimental
+mamba repoquery depends m2-conda-epoch --channel conda-forge
 ```
 
 
