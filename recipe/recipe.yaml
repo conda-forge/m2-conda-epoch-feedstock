@@ -1,28 +1,31 @@
+context:
+  version: "20261029"
+
 package:
   name: m2-conda-epoch
-  version: '20250515'
+  version: ${{ version }}
 
 build:
   number: 0
-  string: 0_x86_64  # [win and (arm64 or x86_64)]
-  skip: True        # [not win]
-  run_exports:
-    weak:
-      - m2-conda-epoch {{ PKG_VERSION }} *_x86_64
-    noarch:
-      - m2-conda-epoch {{ PKG_VERSION }} *_x86_64
+  string: 0_x86_64
+  skip: not win
 
 requirements:
-  run:
-  run_constrained:
+  run_exports:
+    weak:
+      - m2-conda-epoch ==${{ version }} *_x86_64
+    noarch:
+      - m2-conda-epoch ==${{ version }} *_x86_64
+
+  run_constraints:
     - msys2-conda-epoch <0.0a0
 
-test:
-  commands:
-    - echo "hello world"
+tests:
+  - script:
+      - echo "m2-conda-epoch ${{ version }}"
 
 about:
-  home: https://github.com/conda-forge/m2-conda-epoch-feedstock
+  homepage: https://github.com/conda-forge/m2-conda-epoch-feedstock
   license: BSD-3-Clause
   license_file: LICENSE.txt
   summary: epoch for m2 (not m2w64) packages
